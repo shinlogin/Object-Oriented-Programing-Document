@@ -84,11 +84,13 @@
 	
 	// Dang Ky Lop Cho Hoc Sinh
 	{
-		$school->find_class ( "A1" )->add_student ( $sv1 );
-		$school->find_class ( "C1" )->add_student ( $sv8 );
-		
-		$school->find_class ( "A1" )->add_students ( array ($sv4,$sv2,$sv3 ) );
-		$school->find_class ( "C2" )->add_students ( array ($sv5,$sv6,$sv7 ) );
+		$school->find_class_by_name ( "A1" )->add_student ( $sv1 );
+		$school->find_class_by_name ( "C1" )->add_student ( $sv8 );
+
+		$school->find_class_by_name ( "A1" )->add_students ( array ($sv4,$sv2,$sv3 ) );
+		$school->find_class_by_name ( "C2" )->add_students ( array ($sv5,$sv6,$sv7 ) );
+
+        $school->find_class_by_name("A1")->remove_student($sv3);
 	}
 	
 	header ( 'Content-Type: text/html; charset=utf-8' );
